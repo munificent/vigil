@@ -44,7 +44,7 @@ It goes without saying that any function that throws an exception which isn't ca
 
 ## Runtime vigilance
 
-This is where Vigil sets itself apart from weaker languages that lack the courage of their convictions. When a Vigil program is executed, Vigil itself will monitor all oaths (implorations and swears) that have been made. If an oath is broken, the offending function (the called in the case of `implore` and the callee in the case of `swear`) *will be duly punished.*
+This is where Vigil sets itself apart from weaker languages that lack the courage of their convictions. When a Vigil program is executed, Vigil itself will monitor all oaths (implorations and swears) that have been made. If an oath is broken, the offending function (the caller in the case of `implore` and the callee in the case of `swear`) *will be duly punished.*
 
 How?
 
