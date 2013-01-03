@@ -1,0 +1,15 @@
+# This shows what happens when a function throws an unhandled exception.
+
+def say_hello(who):
+    """
+    Greets 'who'.
+    """
+
+    print "Hi,", who
+    raise Exception("ERROR!") # Oops.
+
+def innocent_fn():
+    say_hello('Bob')
+
+def main():
+    innocent_fn()

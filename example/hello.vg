@@ -1,0 +1,22 @@
+# This is an innocent program which meets all of its moral obligations.
+
+def fib(n):
+    """
+    Calculates the nth value in the Fibonacci sequence.
+
+    "n" must be non-negative, and the result will be as well.
+    """
+    implore n >= 0
+    if n < 2:
+        result = n
+    else:
+        result = fib(n - 1) + fib(n - 2)
+
+    swear result >= 0
+    return result
+
+def main():
+    print "Let's see some Fibonacci numbers!"
+    for n in xrange(0, 10):
+        print n, ':', fib(n)
+    print "I feel happy and innocent!"

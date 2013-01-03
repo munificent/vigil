@@ -1,0 +1,16 @@
+# This shows what happens when a caller fails to keep its oath.
+import math
+
+def square_root(n):
+    """
+    Calculates the square root of the given number, which must be non-negative.
+    """
+    implore n >= 0
+
+    return math.sqrt(abs(n))
+
+def evil_fn():
+    square_root(-1)
+
+def main():
+    evil_fn()

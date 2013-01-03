@@ -1,0 +1,18 @@
+# This shows what happens when a function fails to keep its oath.
+
+def bad_abs(n):
+    """
+    Calculates the absolute value of the given number. Always returns a
+    non-negative number.
+    """
+    result = -n # Oops.
+
+    swear result >= 0
+    return result
+
+def innocent_fn():
+    print bad_abs(-2) # OK...
+    print bad_abs(2)  # Uh-oh...
+
+def main():
+    innocent_fn()
