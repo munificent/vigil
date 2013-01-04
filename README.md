@@ -1,6 +1,6 @@
 Vigil is a *very safe* programming language, and an entry in the [January 2013 PLT Games competition](http://www.pltgames.com/competition/2013/1).
 
-Many programming language claim to take testing, contracts and safety seriously, but only Vigil is *truly* vigilant about not allowing code that fails to pass programmatic specifications.
+Many programming languages claim to take testing, contracts and safety seriously, but only Vigil is *truly* vigilant about not allowing code that fails to pass programmatic specifications.
 
 ## Syntax and semantics
 
