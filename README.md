@@ -10,7 +10,7 @@ Infinitely more important than mere syntax and semantics are its addition of **s
 
 ### The `implore` statement to beseech your needs
 
-Often, a function will require that parameters have certain desireable properties. A function in Vigil can state what it requires by using `implore`:
+Often, a function will require that parameters have certain desirable properties. A function in Vigil can state what it requires by using `implore`:
 
 ```
 def square_root(n):
