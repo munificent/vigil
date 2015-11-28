@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+
+import re
+import sys
+import traceback
+
+source_path = sys.argv[1]
+source_lines = None
+offenders = []
+
+def punish(line, offense):
+    # No double jeopardy.
+    for _, _, offend_line in offenders:
+        if line == offend_line: return
+
+    # Walk back to find the beginning of the function containing this line.
+    start = line-1
+    while start >= 0:
+        if re.match('def ', source_lines[start]):
+            break
+        start -= 1
+
+    # Walk forward to find the end of the function.
+    end = line-1
+    while end < len(source_lines):
+        if re.match('^\s*$', source_lines[end]):
+            break
+        end += 1
+
+    # Duly note those functions which hath caused offence.
+    offenders.append((source_lines[start].strip(), offense, line))
+
+    # Clear the lines, but don't delete them. That way later failures will
+    # have the right line number.
+    for i in xrange(start, end):
+        source_lines[i] = ''
+
+def vigil_implore(ok, expr):
+    if not ok:
+        bad_line = traceback.extract_stack()[-3][1]
+        punish(bad_line,
+            "Denied the needs of a function which implored '%s'." % expr)
+
+def vigil_swear(ok, expr):
+    if not ok:
+        bad_line = traceback.extract_stack()[-2][1]
+        punish(bad_line, "Swore '%s' and failed to provide such." % expr)
+
+def vigil_done():
+    # Silent vigil if all is well.
+    if not offenders:
+        return
+
+    # Strip out the dirty impure lines.
+    cleansed = filter(len, source_lines)
+    with open(source_path, 'w') as f:
+        f.writelines(cleansed)
+
+    print ""
+    print ""
+    print "------------------------------------------------------------------"
+    print ""
+    print "The ever vigilant watchers of your code have found malfeasance in:"
+    print ""
+
+    for fn, offense, _ in offenders:
+        print fn
+        print "Crime:", offense
+        print ""
+
+    print "Each has been dealt an appropriate punishment."
+
+def vigil_uncaught():
+    raise_line = traceback.extract_tb(sys.exc_info()[2])[-1][1]
+    punish(raise_line, "Raised '%s' which was not caught." % sys.exc_info()[1])
+
+with open(source_path) as f:
+    source_lines = f.readlines()
+
+    source = ""
+    for line in source_lines:
+        line = re.sub(r'(\s*)implore (.*)', r'\1vigil_implore(\2, """\2""")', line)
+        line = re.sub(r'(\s*)swear (.*)', r'\1vigil_swear(\2, """\2""")', line)
+        source += line
+    source += """
+try:
+    main()
+except Exception as ex:
+    # Be forgiving of our own sins, for there must be someone left to carry out the deed
+    if ex.__class__.__name__ != "NameError" or ex.message.split("'")[1] != "main":
+        vigil_uncaught()
+
+vigil_done()
+"""
+    exec(source)
