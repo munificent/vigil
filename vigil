@@ -23,7 +23,8 @@ def punish(line, offense):
     # Walk forward to find the end of the function.
     end = line
     while end < len(source_lines):
-        if re.match('^\s*$', source_lines[end]):
+        if re.match('^\S+', source_lines[end]):
+            end -= 1
             break
         end += 1
 
@@ -75,15 +76,16 @@ def vigil_uncaught():
     print "uncaught error from line ", raise_line
     punish(raise_line, "Raised '%s' which was not caught." % sys.exc_info()[1])
 
-with open(source_path) as f:
-    source_lines = f.readlines()
+try:
+    with open(source_path) as f:
+        source_lines = f.readlines()
 
-    source = ""
-    for line in source_lines:
-        line = re.sub(r'(\s*)implore (.*)', r'\1vigil_implore(\2, """\2""")', line)
-        line = re.sub(r'(\s*)swear (.*)', r'\1vigil_swear(\2, """\2""")', line)
-        source += line
-    source += """
+        source = ""
+        for line in source_lines:
+            line = re.sub(r'(\s*)implore (.*)', r'\1vigil_implore(\2, """\2""")', line)
+            line = re.sub(r'(\s*)swear (.*)', r'\1vigil_swear(\2, """\2""")', line)
+            source += line
+        source += """
 try:
     main()
 except Exception as ex:
@@ -91,4 +93,13 @@ except Exception as ex:
 
 vigil_done()
 """
-    exec(source)
+        exec(source)
+except:
+    print("Vigil has failed to uphold supreme moral vigilance.")
+    offenders = []
+    source_path = sys.argv[0]
+    with open(source_path) as f:
+        source_lines = f.readlines()
+    vigil_uncaught()
+
+    vigil_done()
