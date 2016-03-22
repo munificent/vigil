@@ -66,7 +66,7 @@ The "example" directory has some to get you started.
 
 ### Is this serious?
 
-Eternal moral vigilance is no laughing matter.  When creating a data paradise for the programming high-priests, one cannot allow sloppiness or favor.  The perfect application for the language is towards the creation of a data ecosystem, where many snippets have to interact with each other and the implications of running incorrect code could be disastrous--even collapse a society.  In such case, like attending Church, one wants to be *clean* when one's frottage.
+Eternal moral vigilance is no laughing matter.  When creating a data paradise for the programming high-priests, one cannot allow sloppiness or favor.  The perfect application for the language is towards the creation of a data ecosystem, where many snippets have to interact with each other and the implications of running incorrect code could be disastrous--even collapse a society.  In such case, like attending Church, one wants to be *clean* amidst the frottage.
 
 ### But isn't a language that deletes code crazy?
 
