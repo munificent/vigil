@@ -12,7 +12,7 @@ Infinitely more important than mere syntax and semantics are its addition of **s
 
 Often, a function will require that parameters have certain desirable properties. A function in Vigil can state what it requires by using `implore`:
 
-```
+```python
 def square_root(n):
     implore n >= 0
     return math.sqrt(n)
@@ -24,7 +24,7 @@ If a caller fails to provide valid arguments, it is *wrong* and must be punished
 
 If a good caller meets its obligations, the onus is thus on you to fulfill your end of the bargain. You can state the oaths that you promise to uphold using `swear`:
 
-```
+```python
 def fib(n):
     if n < 2:
         result = n
