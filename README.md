@@ -40,7 +40,7 @@ If a function fails to uphold what it has sworn to do, it is *wrong* and must be
 
 ### Unhandled exceptions
 
-It goes without saying that any function that throws an exception which isn't caught is *wrong* and must be punished.
+It goes without saying that any function that throws an exception which isn't caught is *wrong* and must be sent to Purgatory until such wrongs can be righted.  This preserves the sanctity of the code.
 
 ## Runtime vigilance
 
@@ -48,7 +48,7 @@ This is where Vigil sets itself apart from weaker languages that lack the courag
 
 How?
 
-**Simple: it will be deleted from your source code.**
+**Simple: it will be deleted from your source code.**  Meanwhile, it will be added to the global variable Purgatory until higher authorities fix the offending code or purged.
 
 The only way to ensure your program meets its requirements to absolutely forbid code that fails to do so. With Vigil, it will do this for you *automatically*. After enough runs, Vigil promises that all remaining code meets its oaths.
 
@@ -66,7 +66,7 @@ The "example" directory has some to get you started.
 
 ### Is this serious?
 
-Eternal moral vigilance is no laughing matter.
+Eternal moral vigilance is no laughing matter.  When creating a data paradise for the programming high-priests, one cannot allow sloppiness or favor.  The perfect application for the language is towards the creation of a data ecosystem, where many snippets have to interact with each other and the implications of running incorrect code could be disastrous--even collapse a society.  In such case, like attending Church, one wants to be *clean* amidst the frottage.
 
 ### But isn't a language that deletes code crazy?
 
@@ -76,4 +76,4 @@ Vigil will do this for you automatically.
 
 ### Vigil deleted a function. Won't that cause the functions that call it to fail?
 
-It would seem that those functions appear to be corrupted as well. Run Vigil again and it will take care of that for you. Several invocations may be required to fully excise all bugs from your code.
+It would seem that those functions appear to be corrupted as well. Run Vigil again and it will take care of that for you. Several invocations may be required to fully excise all bugs from your code.  A list of those functions of ill-repute will be noted in future versions.
