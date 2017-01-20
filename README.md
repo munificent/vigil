@@ -50,7 +50,7 @@ How?
 
 **Simple: it will be deleted from your source code.**
 
-The only way to ensure your program meets its requirements to absolutely forbid code that fails to do so. With Vigil, it will do this for you *automatically*. After enough runs, Vigil promises that all remaining code meets its oaths.
+The only way to ensure your program meets its requirements to absolutely forbid code that fails to do so. With Vigil, it will do this for you *automatically*.
 
 ## Usage
 
