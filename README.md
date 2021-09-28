@@ -6,7 +6,7 @@ Many programming languages claim to take testing, contracts and safety seriously
 
 Vigil is very similar to Python with the minor proviso that you must provide a `main()` function which will be automatically called for you.
 
-Infinitely more important than mere syntax and semantics are its addition of **supreme moral vigilance**. This is similar to contracts, but less legal and more medieval.
+Infinitely more important than mere syntax and semantics is its addition of **supreme moral vigilance**. This is similar to contracts, but less legal and more medieval.
 
 ### The `implore` statement to beseech your needs
 
