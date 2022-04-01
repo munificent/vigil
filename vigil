@@ -36,7 +36,7 @@ def punish(line, offense):
 
     # Clear the lines, but don't delete them. That way later failures will
     # have the right line number.
-    for i in range(start, end + 1):
+    for i in range(start, end):
         source_lines[i] = ''
 
 def vigil_implore(ok, expr):
