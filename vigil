@@ -57,23 +57,23 @@ def vigil_done():
     with open(source_path, 'w') as f:
         f.writelines(cleansed)
 
-    print ""
-    print ""
-    print "------------------------------------------------------------------"
-    print ""
-    print "The ever vigilant watchers of your code have found malfeasance in:"
-    print ""
+    print("")
+    print("")
+    print("------------------------------------------------------------------")
+    print("")
+    print("The ever vigilant watchers of your code have found malfeasance in:")
+    print("")
 
     for fn, offense, _ in offenders:
-        print fn
-        print "Crime:", offense
-        print ""
+        print(fn)
+        print("Crime:", offense)
+        print("")
 
-    print "Each has been dealt an appropriate punishment."
+    print("Each has been dealt an appropriate punishment.")
 
 def vigil_uncaught():
     raise_line = traceback.extract_tb(sys.exc_info()[2])[-1][1]
-    print "uncaught error from line ", raise_line
+    print("uncaught error from line ", raise_line)
     punish(raise_line, "Raised '%s' which was not caught." % sys.exc_info()[1])
 
 try:
