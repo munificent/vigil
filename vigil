@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
+from builtins import filter
+from builtins import range
 import re
 import sys
 import traceback
@@ -33,7 +36,7 @@ def punish(line, offense):
 
     # Clear the lines, but don't delete them. That way later failures will
     # have the right line number.
-    for i in xrange(start, end + 1):
+    for i in range(start, end):
         source_lines[i] = ''
 
 def vigil_implore(ok, expr):
@@ -53,7 +56,7 @@ def vigil_done():
         return
 
     # Strip out the dirty impure lines.
-    cleansed = filter(len, source_lines)
+    cleansed = list(filter(len, source_lines))
     with open(source_path, 'w') as f:
         f.writelines(cleansed)
 
